@@ -1,0 +1,1750 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GST - Сервисный центр компьютерной техники в Талгаре">
+    <title>GST Global Service Technology - Сервисный центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Share+Tech+Mono&family=Russo+One&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #00ff88;          /* Неоново-зеленый */
+            --secondary-color: #1a1a1a;        /* Темно-серый */
+            --accent-color: #ff2e63;           /* Неоново-розовый */
+            --accent-blue: #00fff2;            /* Неоново-голубой */
+            --accent-purple: #b600ff;          /* Неоново-фиолетовый */
+            --warning-color: #ff3636;          /* Яркий красный */
+            --dark-bg: #0a0a0a;                /* Глубокий черный */
+            --darker-bg: #050505;              /* Еще более темный */
+            --light-text: #e0e0e0;             /* Светлый текст */
+            --industrial-gradient: linear-gradient(45deg, var(--primary-color), var(--accent-blue));
+            --cyber-gradient: linear-gradient(45deg, var(--accent-purple), var(--accent-color));
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Обновленный фон для секций */
+        .section {
+            background-color: var(--darker-bg);
+            padding: 60px 0;
+            margin: 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Обновленные карточки */
+        .industrial-card {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.9) 0%, rgba(13, 13, 13, 0.95) 100%);
+            border: 1px solid var(--primary-color);
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        .industrial-card:hover {
+            box-shadow: 
+                0 0 30px rgba(0, 255, 136, 0.2),
+                0 0 60px rgba(0, 255, 242, 0.1);
+        }
+
+        /* Обновленные кнопки */
+        .industrial-button {
+            background: var(--cyber-gradient);
+            border: none;
+            color: white;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .industrial-button:hover {
+            background: var(--industrial-gradient);
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+        }
+
+        /* Неоновые эффекты */
+        .neon-text {
+            color: var(--primary-color);
+            text-shadow: 
+                0 0 5px var(--primary-color),
+                0 0 10px var(--primary-color),
+                0 0 20px var(--primary-color);
+        }
+
+        /* Обновленные статистические элементы */
+        .stat-item {
+            background: rgba(26, 26, 26, 0.5);
+            border: 1px solid var(--accent-blue);
+            backdrop-filter: blur(5px);
+        }
+
+        .stat-number {
+            background: var(--cyber-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Обновленная временная шкала */
+        .timeline-item {
+            background: rgba(26, 26, 26, 0.5);
+            border-left: 4px solid var(--accent-color);
+            backdrop-filter: blur(5px);
+        }
+
+        /* Обновленные технические детали */
+        .tech-details {
+            background: rgba(0, 255, 242, 0.05);
+            border-left: 3px solid var(--accent-blue);
+        }
+
+        /* Обновленные предупреждения */
+        .warning-message {
+            background: rgba(255, 54, 54, 0.05);
+            border-left: 4px solid var(--warning-color);
+        }
+
+        /* Обновленная форма */
+        .form-input {
+            background: rgba(26, 26, 26, 0.5);
+            border: 1px solid var(--primary-color);
+            color: var(--light-text);
+        }
+
+        .form-input:focus {
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+            border-color: var(--accent-blue);
+        }
+
+        /* Обновленный футер */
+        .footer {
+            background: var(--darker-bg);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Анимированный градиентный фон */
+        .technical-background {
+            background: 
+                linear-gradient(rgba(10,10,10,0.97), rgba(10,10,10,0.97)),
+                repeating-linear-gradient(45deg, 
+                    var(--primary-color) 0%, 
+                    var(--primary-color) 1%, 
+                    transparent 1%, 
+                    transparent 2%
+                ),
+                repeating-linear-gradient(-45deg, 
+                    var(--accent-blue) 0%, 
+                    var(--accent-blue) 1%, 
+                    transparent 1%, 
+                    transparent 2%
+                );
+            background-attachment: fixed;
+        }
+
+        /* Обновленные технические индикаторы */
+        .tech-indicator {
+            background: var(--primary-color);
+            box-shadow: 
+                0 0 10px var(--primary-color),
+                0 0 20px var(--primary-color);
+        }
+
+        /* Добавляем эффект свечения для ссылок */
+        a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+            text-shadow: 0 0 10px var(--primary-color);
+        }
+
+        /* Обновленная таблица цен */
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(26, 26, 26, 0.5);
+        }
+
+        .price-table td {
+            padding: 15px;
+            border: 1px solid rgba(0, 255, 136, 0.1);
+        }
+
+        .price-table tr:hover {
+            background: rgba(0, 255, 136, 0.05);
+        }
+
+        /* Анимированный фон */
+        .technical-background {
+            background: 
+                linear-gradient(rgba(26,26,26,0.97), rgba(26,26,26,0.97)),
+                repeating-linear-gradient(45deg, 
+                    var(--primary-color) 0%, 
+                    var(--primary-color) 2%, 
+                    transparent 2%, 
+                    transparent 4%
+                ),
+                repeating-linear-gradient(-45deg, 
+                    var(--accent-blue) 0%, 
+                    var(--accent-blue) 2%, 
+                    transparent 2%, 
+                    transparent 4%
+                );
+            background-attachment: fixed;
+        }
+
+        /* Технические индикаторы */
+        .tech-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent-green);
+            box-shadow: 0 0 10px var(--accent-green);
+            animation: blink 1s infinite;
+        }
+
+        .tech-indicator.warning {
+            background: var(--warning-color);
+            box-shadow: 0 0 10px var(--warning-color);
+        }
+
+        /* Технические детали */
+        .tech-details {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 0.8em;
+            color: var(--accent-blue);
+            padding: 10px;
+            background: rgba(0,163,255,0.1);
+            border-left: 3px solid var(--accent-blue);
+            margin: 10px 0;
+        }
+
+        /* Анимированные кнопки */
+        .industrial-button {
+            background: var(--industrial-gradient);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+        }
+
+        .industrial-button::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent,
+                rgba(255,255,255,0.1),
+                transparent
+            );
+            transform: rotate(45deg);
+            animation: buttonGlow 2s infinite;
+        }
+
+        @keyframes buttonGlow {
+            0% { transform: rotate(45deg) translateX(-100%); }
+            100% { transform: rotate(45deg) translateX(100%); }
+        }
+
+        /* Статистика с анимацией */
+        .stat-number {
+            font-size: 3em;
+            font-weight: bold;
+            background: var(--industrial-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+        }
+
+        .stat-number::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--industrial-gradient);
+        }
+
+        /* Временная шкала */
+        .timeline-item {
+            position: relative;
+            padding: 20px;
+            background: var(--secondary-color);
+            border-left: 4px solid var(--primary-color);
+            margin-left: 20px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -12px;
+            top: 50%;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* Предупреждающие сообщения */
+        .warning-message {
+            background: rgba(255,68,68,0.1);
+            border-left: 4px solid var(--warning-color);
+            padding: 15px;
+            margin: 10px 0;
+            position: relative;
+        }
+
+        .warning-message::before {
+            content: '⚠';
+            color: var(--warning-color);
+            margin-right: 10px;
+        }
+
+        /* Анимация загрузки */
+        .loading-bar {
+            width: 100%;
+            height: 4px;
+            background: var(--secondary-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loading-bar::after {
+            content: '';
+            position: absolute;
+            left: -50%;
+            width: 50%;
+            height: 100%;
+            background: var(--industrial-gradient);
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { left: -50%; }
+            100% { left: 100%; }
+        }
+
+        /* Основные стили из предыдущего ответа */
+        /* ... (вставьте все стили из предыдущего ответа) ... */
+
+        /* Дополнительные стили для промышленного дизайна */
+        .hero-section {
+            min-height: 100vh;
+            background: linear-gradient(rgba(26,26,26,0.8), rgba(26,26,26,0.9)),
+                        url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1') center/cover;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 4em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            color: var(--light-text);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 40px 0;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: var(--secondary-color);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .process-timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary-color);
+        }
+
+        .process-step {
+            position: relative;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: var(--secondary-color);
+            width: calc(50% - 30px);
+            margin-left: auto;
+        }
+
+        .process-step:nth-child(even) {
+            margin-left: 0;
+            margin-right: auto;
+        }
+
+        .contact-form {
+            background: var(--secondary-color);
+            padding: 30px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            background: var(--dark-bg);
+            border: 1px solid var(--primary-color);
+            color: var(--light-text);
+        }
+
+        /* Анимации */
+        @keyframes slideIn {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .animate-in {
+            animation: slideIn 0.5s ease forwards;
+        }
+
+        /* Новые стили для шрифтов */
+        body {
+            font-family: 'Share Tech Mono', monospace;
+        }
+
+        h1, h2, h3, .hero-title {
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .tech-text {
+            font-family: 'Share Tech Mono', monospace;
+        }
+
+        .hero-title {
+            font-family: 'Russo One', sans-serif;
+            font-size: 4.5em;
+            letter-spacing: 2px;
+        }
+
+        /* Стили для аккордеона */
+        .accordion-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .accordion-item {
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-header {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            cursor: pointer;
+            gap: 20px;
+            background: linear-gradient(
+                90deg,
+                rgba(0, 255, 136, 0.1),
+                transparent
+            );
+        }
+
+        .accordion-header:hover {
+            background: linear-gradient(
+                90deg,
+                rgba(0, 255, 136, 0.2),
+                transparent
+            );
+        }
+
+        .accordion-toggle {
+            margin-left: auto;
+            font-size: 24px;
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-item.active .accordion-toggle {
+            transform: rotate(45deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 1000px;
+            padding: 20px;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .service-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 5px;
+            border-left: 3px solid var(--primary-color);
+        }
+
+        .service-item h4 {
+            color: var(--accent-blue);
+            margin-bottom: 15px;
+        }
+
+        .service-item ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-item li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .service-item li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        .price {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 5px 10px;
+            background: var(--primary-color);
+            color: var(--dark-bg);
+            border-radius: 3px;
+            font-weight: bold;
+        }
+
+        .tech-icon {
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+
+        /* Стили для новой шапки */
+        .cyber-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--primary-color);
+            padding: 15px 0;
+        }
+
+        .header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(90deg, 
+                    rgba(0, 255, 136, 0.1) 1px, 
+                    transparent 1px
+                ),
+                linear-gradient(
+                    rgba(0, 255, 136, 0.1) 1px,
+                    transparent 1px
+                );
+            background-size: 20px 20px;
+            pointer-events: none;
+        }
+
+        .main-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+        }
+
+        .logo {
+            height: 40px;
+            width: auto;
+        }
+
+        .company-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--light-text);
+        }
+
+        .accent {
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--light-text);
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--industrial-gradient);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::before {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+            text-shadow: 0 0 10px var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .search-box {
+            position: relative;
+            width: 200px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 8px 35px 8px 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--primary-color);
+            border-radius: 20px;
+            color: var(--light-text);
+            font-size: 14px;
+        }
+
+        .search-box i {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary-color);
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 15px;
+            background: rgba(0, 255, 136, 0.1);
+            border-radius: 20px;
+            border: 1px solid var(--primary-color);
+        }
+
+        .phone-number {
+            color: var(--light-text);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 1024px) {
+            .nav-links {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .search-box {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-info {
+                display: none;
+            }
+        }
+
+        /* Анимация для логотипа */
+        .logo-glitch {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-color);
+            mix-blend-mode: overlay;
+            opacity: 0;
+            animation: glitch 2s infinite;
+        }
+
+        @keyframes glitch {
+            0% { opacity: 0; transform: translate(0); }
+            7% { opacity: 0.1; transform: translate(-2px, 3px); }
+            10% { opacity: 0; transform: translate(0); }
+            27% { opacity: 0; transform: translate(0); }
+            30% { opacity: 0.1; transform: translate(2px, -3px); }
+            35% { opacity: 0; transform: translate(0); }
+            100% { opacity: 0; transform: translate(0); }
+        }
+
+        /* Стили для кнопки звука */
+        .sound-toggle {
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            cursor: pointer;
+            padding: 8px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .sound-toggle:hover {
+            color: var(--accent-blue);
+            transform: scale(1.1);
+        }
+
+        .sound-toggle .tooltip {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: var(--light-text);
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .sound-toggle:hover .tooltip {
+            opacity: 1;
+        }
+
+        /* Анимация для иконки звука */
+        @keyframes soundWave {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .sound-toggle i {
+            animation: soundWave 2s infinite;
+        }
+
+        .sound-toggle:hover i {
+            animation: soundWave 1s infinite;
+        }
+
+        /* Стили для галереи */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            aspect-ratio: 16/9;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-title {
+            color: var(--light-text);
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        /* Стили для фонового изображения */
+        .hero-section {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* Стили для изображений в проектах */
+        .project-image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px 8px 0 0;
+            aspect-ratio: 16/9;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+
+        /* Медиа запросы для адаптивности */
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+
+        /* Добавляем стили для прелоадера */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--primary-color);
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Исправляем z-index для элементов */
+        .cyber-header { z-index: 1000; }
+        .gallery-overlay { z-index: 2; }
+        .accordion-content { z-index: 1; }
+
+        /* Добавляем поддержку для Firefox */
+        * { scrollbar-color: var(--primary-color) var(--dark-bg); }
+
+        /* Исправляем проблемы с мобильным меню */
+        @media (max-width: 1024px) {
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--dark-bg);
+                padding: 20px;
+                border-top: 1px solid var(--primary-color);
+            }
+        }
+
+        /* Стили для секции "Как мы работаем" */
+        .work-process-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .tiktok-video-container {
+            position: relative;
+            padding: 20px;
+            background: rgba(26, 26, 26, 0.9);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .work-steps {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .step-item {
+            padding: 20px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .step-item:hover {
+            transform: translateX(10px);
+        }
+
+        .step-number {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background: var(--primary-color);
+            color: var(--dark-bg);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .step-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 1024px) {
+            .work-process-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Анимации */
+        .step-item {
+            animation: fadeInUp 0.5s ease forwards;
+            opacity: 0;
+        }
+
+        .step-item:nth-child(1) { animation-delay: 0.1s; }
+        .step-item:nth-child(2) { animation-delay: 0.2s; }
+        .step-item:nth-child(3) { animation-delay: 0.3s; }
+        .step-item:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Неоновый эффект для шагов */
+        .step-item {
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.1);
+        }
+
+        .step-item:hover {
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+        }
+    </style>
+
+    <!-- Подключаем шрифты и иконки -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Share+Tech+Mono&family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    
+    <!-- Предзагрузка аудио файлов -->
+    <link rel="preload" href="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3" as="audio">
+    <link rel="preload" href="https://assets.mixkit.co/active_storage/sfx/2572/2572-preview.mp3" as="audio">
+    <link rel="preload" href="https://assets.mixkit.co/active_storage/sfx/2573/2573-preview.mp3" as="audio">
+</head>
+<body>
+    <!-- Добавляем прелоадер -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Декоративные шестеренки -->
+    <div class="gear-decoration top-right"></div>
+    <div class="gear-decoration bottom-left"></div>
+
+    <!-- Новая шапка сайта -->
+    <header class="cyber-header">
+        <div class="header-overlay"></div>
+        <nav class="main-nav container">
+            <div class="logo-container">
+                <img src="path-to-your-logo.png" alt="GST Logo" class="logo">
+                <div class="logo-glitch"></div>
+                <span class="company-name">GST<span class="accent">.kz</span></span>
+            </div>
+            
+            <div class="nav-links">
+                <a href="#home" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    <span>Главная</span>
+                </a>
+                <a href="#services" class="nav-link">
+                    <i class="fas fa-cogs"></i>
+                    <span>Услуги</span>
+                </a>
+                <a href="#projects" class="nav-link">
+                    <i class="fas fa-project-diagram"></i>
+                    <span>Проекты</span>
+                </a>
+                <a href="#about" class="nav-link">
+                    <i class="fas fa-info-circle"></i>
+                    <span>О нас</span>
+                </a>
+                <a href="#contact" class="nav-link">
+                    <i class="fas fa-envelope"></i>
+                    <span>Контакты</span>
+                </a>
+            </div>
+
+            <div class="header-actions">
+                <div class="search-box">
+                    <input type="text" placeholder="Поиск...">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-phone-alt"></i>
+                    <span class="phone-number">+7 747 691 8122</span>
+                </div>
+                <button class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Герой секция с динамическим фоном -->
+    <section class="hero-section" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">GST Global Service Technology</h1>
+                <p class="hero-subtitle">Промышленный сервисный центр в Талгаре</p>
+                <div class="technical-indicator pulse-element"></div>
+                <a href="#contact" class="industrial-button">Связаться с нами</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Услуги -->
+    <section id="services" class="section technical-grid">
+        <div class="container">
+            <h2 class="section-title">Наши услуги</h2>
+            <div class="service-grid">
+                <!-- Карточки услуг из вашего оригинального кода, но с новыми классами -->
+                <div class="industrial-card">
+                    <i class="industrial-icon fas fa-laptop"></i>
+                    <h3>Ремонт компьютеров</h3>
+                    <ul>
+                        <li>Диагностика неисправностей</li>
+                        <li>Замена комплектующих</li>
+                        <li>Чистка от пыли</li>
+                    </ul>
+                </div>
+                <!-- Добавьте остальные карточки услуг -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Статистика -->
+    <section class="section">
+        <div class="container">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <span class="stat-number">5000+</span>
+                    <p>Выполненных ремонтов</p>
+                </div>
+                <!-- Добавьте остальные статистические данные -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Процесс работы -->
+    <section id="how-we-work" class="section technical-background">
+        <div class="container">
+            <h2 class="section-title neon-text">Как мы работаем</h2>
+            
+            <div class="work-process-container">
+                <!-- TikTok видео -->
+                <div class="tiktok-video-container industrial-card">
+                    <blockquote class="tiktok-embed" 
+                        cite="https://www.tiktok.com/@gst.playzone/video/7470039416023649541" 
+                        data-video-id="7470039416023649541">
+                        <section>
+                            <a target="_blank" href="https://www.tiktok.com/@gst.playzone">@gst.playzone</a>
+                        </section>
+                    </blockquote>
+                    <script async src="https://www.tiktok.com/embed.js"></script>
+                </div>
+
+                <!-- Этапы работы -->
+                <div class="work-steps">
+                    <div class="step-item industrial-card">
+                        <span class="step-number">01</span>
+                        <h3>Диагностика</h3>
+                        <p>Тщательная проверка оборудования и выявление неисправностей</p>
+                    </div>
+
+                    <div class="step-item industrial-card">
+                        <span class="step-number">02</span>
+                        <h3>Согласование</h3>
+                        <p>Обсуждение стоимости и сроков ремонта с клиентом</p>
+                    </div>
+
+                    <div class="step-item industrial-card">
+                        <span class="step-number">03</span>
+                        <h3>Ремонт</h3>
+                        <p>Профессиональный ремонт с использованием качественных запчастей</p>
+                    </div>
+
+                    <div class="step-item industrial-card">
+                        <span class="step-number">04</span>
+                        <h3>Тестирование</h3>
+                        <p>Проверка работоспособности после ремонта</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контактная форма -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Связаться с нами</h2>
+            <div class="contact-form">
+                <form id="orderForm">
+                    <input type="text" class="form-input" placeholder="Ваше имя" name="name">
+                    <input type="email" class="form-input" placeholder="Email" name="email">
+                    <input type="tel" class="form-input" placeholder="Телефон" name="phone">
+                    <textarea class="form-input" placeholder="Сообщение" name="message"></textarea>
+                    <button type="submit" class="industrial-button">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 GST Global Service Technology. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript для анимаций -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Анимация появления элементов при скролле
+            const animateElements = document.querySelectorAll('.industrial-card, .stat-item, .process-step');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                    }
+                });
+            });
+
+            animateElements.forEach(element => observer.observe(element));
+        });
+    </script>
+
+    <!-- Добавляем новую секцию о компании -->
+    <section id="about" class="section technical-background">
+        <div class="container">
+            <h2 class="section-title neon-text">О компании GST</h2>
+            
+            <div class="industrial-card">
+                <h3 class="tech-text">Наша миссия</h3>
+                <p>Обеспечение высококачественного сервиса и технической поддержки для предприятий и частных лиц в Талгаре и прилегающих районах.</p>
+            </div>
+
+            <div class="stats-container">
+                <div class="stat-item">
+                    <span class="stat-number">10+</span>
+                    <p>Лет на рынке</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1000+</span>
+                    <p>Довольных клиентов</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <p>Техническая поддержка</p>
+                </div>
+            </div>
+
+            <div class="industrial-card">
+                <h3 class="tech-text">Наши преимущества</h3>
+                <ul>
+                    <li>✓ Сертифицированные специалисты с опытом работы более 5 лет</li>
+                    <li>✓ Современное диагностическое оборудование</li>
+                    <li>✓ Гарантия на все виды работ до 12 месяцев</li>
+                    <li>✓ Выезд специалиста в течение 2 часов</li>
+                    <li>✓ Наличие запчастей на складе</li>
+                </ul>
+            </div>
+
+            <div class="tech-details">
+                <h3>Техническая экспертиза</h3>
+                <ul>
+                    <li>Диагностика и ремонт компьютерной техники любой сложности</li>
+                    <li>Восстановление данных с поврежденных носителей</li>
+                    <li>Настройка серверного оборудования</li>
+                    <li>Установка и настройка программного обеспечения</li>
+                    <li>Обслуживание корпоративных клиентов</li>
+                </ul>
+            </div>
+
+            <div class="industrial-card">
+                <h3 class="tech-text">Партнёрство и сертификации</h3>
+                <p>GST является официальным партнером ведущих производителей компьютерной техники и программного обеспечения:</p>
+                <ul>
+                    <li>• Microsoft Certified Partner</li>
+                    <li>• Авторизованный сервисный центр ASUS</li>
+                    <li>• Сертифицированный партнер Intel</li>
+                    <li>• Авторизованный партнер HP</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <h3 class="tech-text">График работы</h3>
+                <p>Понедельник - Пятница: 09:00 - 18:00</p>
+                <p>Суббота: 10:00 - 16:00</p>
+                <p>Воскресенье: Выходной</p>
+                <p class="tech-text">* Экстренные вызовы принимаются круглосуточно</p>
+            </div>
+
+            <div class="contact-info industrial-card">
+                <h3 class="tech-text">Контактная информация</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Адрес: г. Талгар</p>
+                <p><i class="fas fa-phone"></i> Телефон: <a href="tel:+77476918122">+7 747 691 8122</a></p>
+                <p><i class="fas fa-envelope"></i> Email: info@gst.kz</p>
+                <div class="tech-indicator"></div>
+                <p class="tech-text">Онлайн поддержка активна</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Добавляем секцию услуг с ценами -->
+    <section id="prices" class="section">
+        <div class="container">
+            <h2 class="section-title neon-text">Прайс-лист на услуги</h2>
+            
+            <div class="industrial-card">
+                <h3 class="tech-text">Базовые услуги</h3>
+                <table class="price-table">
+                    <tr>
+                        <td>Диагностика компьютера</td>
+                        <td>от 2000 ₸</td>
+                    </tr>
+                    <tr>
+                        <td>Чистка от пыли</td>
+                        <td>от 3000 ₸</td>
+                    </tr>
+                    <tr>
+                        <td>Замена термопасты</td>
+                        <td>от 2500 ₸</td>
+                    </tr>
+                    <tr>
+                        <td>Установка Windows</td>
+                        <td>от 5000 ₸</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="warning-message">
+                * Окончательная стоимость определяется после диагностики
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция с выпадающими категориями -->
+    <section id="categories" class="section">
+        <div class="container">
+            <h2 class="section-title neon-text">Наши услуги по категориям</h2>
+            
+            <!-- Аккордеон с категориями -->
+            <div class="accordion-container">
+                <!-- Компьютерная техника -->
+                <div class="accordion-item industrial-card">
+                    <div class="accordion-header">
+                        <i class="fas fa-laptop tech-icon"></i>
+                        <h3>Компьютерная техника</h3>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="service-grid">
+                            <div class="service-item">
+                                <h4>Ремонт ноутбуков</h4>
+                                <ul>
+                                    <li>Замена матрицы</li>
+                                    <li>Чистка системы охлаждения</li>
+                                    <li>Замена клавиатуры</li>
+                                    <li>Ремонт материнской платы</li>
+                                </ul>
+                                <span class="price">от 5000 ₸</span>
+                            </div>
+                            <div class="service-item">
+                                <h4>Ремонт компьютеров</h4>
+                                <ul>
+                                    <li>Диагностика неисправностей</li>
+                                    <li>Модернизация системы</li>
+                                    <li>Установка комплектующих</li>
+                                    <li>Настройка BIOS</li>
+                                </ul>
+                                <span class="price">от 3000 ₸</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Программное обеспечение -->
+                <div class="accordion-item industrial-card">
+                    <div class="accordion-header">
+                        <i class="fas fa-code tech-icon"></i>
+                        <h3>Программное обеспечение</h3>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="service-grid">
+                            <div class="service-item">
+                                <h4>Установка ПО</h4>
+                                <ul>
+                                    <li>Windows OS</li>
+                                    <li>Microsoft Office</li>
+                                    <li>Антивирусы</li>
+                                    <li>Специализированное ПО</li>
+                                </ul>
+                                <span class="price">от 4000 ₸</span>
+                            </div>
+                            <div class="service-item">
+                                <h4>Восстановление данных</h4>
+                                <ul>
+                                    <li>С жестких дисков</li>
+                                    <li>С флеш-накопителей</li>
+                                    <li>С SD-карт</li>
+                                    <li>После форматирования</li>
+                                </ul>
+                                <span class="price">от 8000 ₸</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Сетевое оборудование -->
+                <div class="accordion-item industrial-card">
+                    <div class="accordion-header">
+                        <i class="fas fa-network-wired tech-icon"></i>
+                        <h3>Сетевое оборудование</h3>
+                        <span class="accordion-toggle">+</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="service-grid">
+                            <div class="service-item">
+                                <h4>Настройка сетей</h4>
+                                <ul>
+                                    <li>Локальные сети</li>
+                                    <li>Wi-Fi роутеры</li>
+                                    <li>Сетевые хранилища</li>
+                                    <li>VPN подключения</li>
+                                </ul>
+                                <span class="price">от 6000 ₸</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Скрипт для аккордеона
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Закрываем все активные элементы
+                document.querySelectorAll('.accordion-item').forEach(accordionItem => {
+                    accordionItem.classList.remove('active');
+                });
+
+                // Открываем текущий элемент, если он был неактивен
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+
+    <script>
+        // Скрипт для фиксированной шапки с эффектом прозрачности
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.cyber-header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(10, 10, 10, 0.98)';
+            } else {
+                header.style.background = 'rgba(10, 10, 10, 0.95)';
+            }
+        });
+
+        // Скрипт для мобильного меню
+        document.querySelector('.menu-toggle').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+
+    <!-- Добавляем аудио файлы -->
+    <audio id="hover-sound" preload="auto">
+        <source src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="click-sound" preload="auto">
+        <source src="https://assets.mixkit.co/active_storage/sfx/2572/2572-preview.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="menu-open-sound" preload="auto">
+        <source src="https://assets.mixkit.co/active_storage/sfx/2573/2573-preview.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // Функция для воспроизведения звука
+        function playSound(audioId) {
+            const sound = document.getElementById(audioId);
+            sound.currentTime = 0; // Сброс времени для возможности повторного воспроизведения
+            sound.volume = 0.2; // Устанавливаем громкость на 20%
+            sound.play();
+        }
+
+        // Добавляем звуки к элементам навигации
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('mouseenter', () => playSound('hover-sound'));
+            link.addEventListener('click', () => playSound('click-sound'));
+        });
+
+        // Звук для кнопок
+        document.querySelectorAll('.industrial-button').forEach(button => {
+            button.addEventListener('mouseenter', () => playSound('hover-sound'));
+            button.addEventListener('click', () => playSound('click-sound'));
+        });
+
+        // Звук для карточек
+        document.querySelectorAll('.industrial-card').forEach(card => {
+            card.addEventListener('mouseenter', () => playSound('hover-sound'));
+        });
+
+        // Звук для аккордеона
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => playSound('menu-open-sound'));
+        });
+
+        // Звук для мобильного меню
+        document.querySelector('.menu-toggle').addEventListener('click', () => {
+            playSound('menu-open-sound');
+        });
+
+        // Добавляем кнопку включения/выключения звука
+        const soundToggle = document.createElement('button');
+        soundToggle.className = 'sound-toggle';
+        soundToggle.innerHTML = `
+            <i class="fas fa-volume-up"></i>
+            <div class="tooltip">Звук включен</div>
+        `;
+        document.querySelector('.header-actions').prepend(soundToggle);
+
+        let soundEnabled = true;
+        soundToggle.addEventListener('click', () => {
+            soundEnabled = !soundEnabled;
+            if (soundEnabled) {
+                soundToggle.innerHTML = `
+                    <i class="fas fa-volume-up"></i>
+                    <div class="tooltip">Звук включен</div>
+                `;
+            } else {
+                soundToggle.innerHTML = `
+                    <i class="fas fa-volume-mute"></i>
+                    <div class="tooltip">Звук выключен</div>
+                `;
+            }
+            // Обновляем функцию воспроизведения
+            window.playSound = soundEnabled ? 
+                (audioId) => document.getElementById(audioId).play() : 
+                () => {};
+        });
+    </script>
+
+    <!-- Обновляем карточки проектов -->
+    <div class="projects-grid">
+        <div class="project-card industrial-card">
+            <div class="project-image">
+                <img src="https://www.technodom.kz/under/blog/kak-vybrat-igrovoj-kompyuter/kak-vybrat-igrovoj-kompyuter-2.jpg" alt="Серверная">
+            </div>
+            <!-- ... контент карточки ... -->
+        </div>
+        
+        <div class="project-card industrial-card">
+            <div class="project-image">
+                <img src="https://images.unsplash.com/photo-1588508065123-287b28e013da?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Ремонт ноутбука">
+            </div>
+            <!-- ... контент карточки ... -->
+        </div>
+        
+        <div class="project-card industrial-card">
+            <div class="project-image">
+                <img src="https://images.unsplash.com/photo-1563770660941-20978e870e26?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Сетевое оборудование">
+            </div>
+            <!-- ... контент карточки ... -->
+        </div>
+    </div>
+
+    <!-- Добавляем секцию с галереей -->
+    <section id="gallery" class="section">
+        <div class="container">
+            <h2 class="section-title neon-text">Наша работа</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://www.technodom.kz/under/blog/kak-vybrat-igrovoj-kompyuter/kak-vybrat-igrovoj-kompyuter-2.jpg" alt="Рабочий процесс">
+                    <div class="gallery-overlay">
+                        <span class="gallery-title">Диагностика оборудования</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Серверная">
+                    <div class="gallery-overlay">
+                        <span class="gallery-title">Серверное оборудование</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1588508065123-287b28e013da?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Ремонт">
+                    <div class="gallery-overlay">
+                        <span class="gallery-title">Ремонт техники</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.technodom.kz/under/blog/kak-vybrat-igrovoj-kompyuter/kak-vybrat-igrovoj-kompyuter-2.jpg" alt="Разработка">
+                    <div class="gallery-overlay">
+                        <span class="gallery-title">Программирование</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Добавляем обработку прелоадера
+        window.addEventListener('load', () => {
+            document.querySelector('.preloader').style.opacity = '0';
+            setTimeout(() => {
+                document.querySelector('.preloader').style.display = 'none';
+            }, 500);
+        });
+
+        // Оптимизируем обработчики событий
+        const addSoundEvents = () => {
+            const elements = {
+                '.nav-link': ['mouseenter', 'click'],
+                '.industrial-button': ['mouseenter', 'click'],
+                '.industrial-card': ['mouseenter'],
+                '.accordion-header': ['click'],
+                '.menu-toggle': ['click']
+            };
+
+            for (const [selector, events] of Object.entries(elements)) {
+                document.querySelectorAll(selector).forEach(element => {
+                    events.forEach(event => {
+                        element.addEventListener(event, () => {
+                            const soundId = event === 'click' ? 'click-sound' : 'hover-sound';
+                            if (event === 'click' && selector === '.accordion-header') {
+                                playSound('menu-open-sound');
+                            } else {
+                                playSound(soundId);
+                            }
+                        });
+                    });
+                });
+            }
+        };
+
+        // Оптимизируем загрузку изображений
+        document.querySelectorAll('img').forEach(img => {
+            img.loading = 'lazy';
+            img.decoding = 'async';
+        });
+
+        // Добавляем обработку ошибок
+        window.addEventListener('error', (e) => {
+            console.error('Ошибка:', e.message);
+            // Здесь можно добавить отправку ошибок на сервер
+        });
+
+        // Оптимизируем скролл
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+            if (scrollTimeout) {
+                window.cancelAnimationFrame(scrollTimeout);
+            }
+            scrollTimeout = window.requestAnimationFrame(() => {
+                const header = document.querySelector('.cyber-header');
+                const scrolled = window.scrollY > 50;
+                header.style.background = `rgba(10, 10, 10, ${scrolled ? '0.98' : '0.95'})`;
+            });
+        });
+    </script>
+
+    <script>
+        // Добавьте этот код в обработчик формы в index.html
+        document.getElementById('orderForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Получаем данные формы
+            const formData = {
+                date: new Date().toISOString().split('T')[0],
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                service: document.getElementById('message').value,
+                status: 'new'
+            };
+
+            // Получаем существующие заявки из localStorage
+            let requests = JSON.parse(localStorage.getItem('gstRequests') || '[]');
+            
+            // Добавляем новую заявку
+            requests.push(formData);
+            
+            // Сохраняем обновленный список
+            localStorage.setItem('gstRequests', JSON.stringify(requests));
+            
+            // Показываем уведомление
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.innerHTML = 'Заявка успешно отправлена!';
+            document.body.appendChild(notification);
+            
+            // Закрываем модальное окно
+            document.getElementById('orderModal').style.display = 'none';
+            
+            // Очищаем форму
+            e.target.reset();
+            
+            // Удаляем уведомление через 3 секунды
+            setTimeout(() => notification.remove(), 3000);
+        });
+    </script>
+</body>
+</html> 
